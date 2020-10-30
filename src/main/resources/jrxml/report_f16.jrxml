@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.0.final using JasperReports Library version 6.12.1-ac0eebdb29e4c0985457bab279a6db744d661530  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="first_template" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b72c2c80-9324-4359-a0b4-1feff9ba2ede">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" fontSize="16" pdfFontName="src/main/resources/fonts/ARIAL.TTF" pdfEncoding="Cp1251"/>
+	<style name="style2" isDefault="true" fontName="Arial" fontSize="9" pdfFontName="src/main/resources/fonts/ARIAL.TTF" pdfEncoding="Cp1251"/>
+	<parameter name="DATE1" class="java.lang.String"/>
+	<parameter name="DATE2" class="java.lang.String"/>
+	<parameter name="numDog" class="java.lang.Long"/>
+	<parameter name="custCode" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="time" class="java.lang.String"/>
+	<field name="tel_b" class="java.lang.String"/>
+	<field name="prod" class="java.lang.Integer"/>
+	<field name="summa" class="java.lang.Float"/>
+	<variable name="summary" class="java.lang.Float" resetType="Group" resetGroup="Group1" calculation="Sum">
+		<variableExpression><![CDATA[$F{summa}]]></variableExpression>
+	</variable>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{phone}]]></groupExpression>
+		<groupFooter>
+			<band height="20">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<textField pattern="#,##0.0000">
+					<reportElement style="style2" x="490" y="0" width="65" height="20" uuid="d2f9234e-df1f-4039-90af-991d46ef25a6">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{summary}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="style2" x="1" y="0" width="489" height="20" uuid="1534b8f3-932d-49a5-86f0-d86f3310d054">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<text><![CDATA[Итого по телефону:]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement style="style1" x="0" y="0" width="555" height="24" uuid="d3c01608-a8e3-46f9-aec6-1ef79663268d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" pdfEncoding="Cp1251"/>
+				</textElement>
+				<text><![CDATA[Детализация соединений]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style2" x="80" y="24" width="262" height="15" uuid="04f52fdb-508f-4de8-b176-eaa9d3ed8f8d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[по абонентскому номеру(ам) Плательщика за период c ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="342" y="24" width="60" height="15" uuid="5e331fde-b9e6-4c04-8e30-0bf6e49f3f14"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATE1}]]></textFieldExpression>
+				<patternExpression><![CDATA["dd/MM/yyyy"]]></patternExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style2" x="402" y="24" width="14" height="15" uuid="88a0a3bf-2ab2-4ee6-a869-e9d5fc89fa25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[по ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="416" y="24" width="60" height="15" uuid="08139bba-9dce-42e0-8165-dacb2f973958"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATE2}]]></textFieldExpression>
+				<patternExpression><![CDATA["dd/MM/yyyy"]]></patternExpression>
+			</textField>
+			<staticText>
+				<reportElement style="style1" x="0" y="40" width="80" height="16" uuid="ebb5f29c-35c2-421f-b2ad-dd8087e54f95"/>
+				<textElement>
+					<font fontName="Arial" size="12" pdfEncoding="Cp1251"/>
+				</textElement>
+				<text><![CDATA[Плательщик: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style1" x="0" y="70" width="69" height="16" uuid="20a5c09f-f522-40c4-adb2-a4e75d47dec5"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Договор № ]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="style2" x="70" y="70" width="100" height="16" uuid="a0154128-49e8-444c-ab69-15325a3c2200"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numDog}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="style2" x="81" y="40" width="474" height="16" uuid="24d2ad1d-f788-4085-9e56-8271bc97fa40"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{custCode}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1]]></printWhenExpression>
+			<staticText>
+				<reportElement style="style2" mode="Transparent" x="1" y="0" width="70" height="40" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF" uuid="a618e3ac-5571-4a86-b4a3-c1057090edb5">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Номер телефона]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style2" stretchType="RelativeToBandHeight" mode="Transparent" x="71" y="0" width="130" height="40" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#FFFFFF" uuid="3cc4beb4-e8bb-43da-821e-c272b69a8c22">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Направление соединения/наименование услуги]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style2" x="201" y="0" width="59" height="40" isPrintInFirstWholeBand="true" uuid="30745c33-9945-4bbf-9def-8b61d79bbd97"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Дата соединения]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style2" x="260" y="0" width="53" height="40" isPrintInFirstWholeBand="true" uuid="dcd792b7-e6a7-493a-87c7-0806a886532d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Время начала соединения]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style2" x="313" y="0" width="74" height="40" isPrintInFirstWholeBand="true" uuid="de144777-7614-481b-a039-dc9e27c587b8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Номер вызываемого абонента/службы]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style2" x="387" y="0" width="103" height="40" isPrintInFirstWholeBand="true" uuid="19ea54c5-5952-4416-ba40-c2e3ffbd8e21"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Продолжительность соединения(мин.)/ количество услуг]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="style2" x="490" y="0" width="65" height="40" isPrintInFirstWholeBand="true" uuid="eb47edcb-baee-44e9-b332-14e81a9958b8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Стоимость (руб.)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="1" y="0" width="70" height="20" uuid="b24a1495-1c6a-4f5c-a98d-94502ea71a30">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="71" y="0" width="130" height="20" uuid="07bafec1-e310-4268-a241-73256ca9ce95">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="201" y="0" width="59" height="20" uuid="e004a4e0-c770-4d48-9798-96c507fe254d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+				<patternExpression><![CDATA["dd/MM/yyyy"]]></patternExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="260" y="0" width="53" height="20" uuid="e84985cb-b40b-4618-8196-5172e7ce9ed3">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{time}]]></textFieldExpression>
+				<patternExpression><![CDATA["HH:mm:ss"]]></patternExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="313" y="0" width="74" height="20" uuid="0466b456-e1a7-4ea4-a800-1248d88fa08e">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tel_b}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="387" y="0" width="103" height="20" uuid="231003da-dd96-46b5-8958-ddade4d687cb">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{prod}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.0000">
+				<reportElement style="style2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="490" y="0" width="65" height="20" uuid="8228a2dd-56bf-4dbf-beb1-c54e72cc4d64">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{summa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
